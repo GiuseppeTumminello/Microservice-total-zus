@@ -27,13 +27,13 @@ class TotalZusServiceTest {
 
     @Test
     void getDescription() {
-        assertThat(salaryCalculatorService.getDescription()).isEqualTo(TOTAL_ZUS_DESCRIPTION);
+        assertThat(this.salaryCalculatorService.getDescription()).isEqualTo(TOTAL_ZUS_DESCRIPTION);
     }
 
     @ParameterizedTest
     @CsvSource({"6000, 822.60, 0.1371", "7000, 959.70, 0.1371", "15891.68, 2178.75, 0.1371"})
     public void getTotalZus(BigDecimal input, BigDecimal expected, BigDecimal rate) {
-        given(ratesConfigurationProperties.getTotalZusRate()).willReturn(rate);
-        assertThat(salaryCalculatorService.apply(input)).isEqualTo(expected);
+        given(this.ratesConfigurationProperties.getTotalZusRate()).willReturn(rate);
+        assertThat(this.salaryCalculatorService.apply(input)).isEqualTo(expected);
     }
 }
