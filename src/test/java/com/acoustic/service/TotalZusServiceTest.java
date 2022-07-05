@@ -1,8 +1,6 @@
 package com.acoustic.service;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.mockito.BDDMockito.given;
-import java.math.BigDecimal;
+import com.acoustic.rate.RatesConfigurationProperties;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,12 +8,17 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.acoustic.rate.RatesConfigurationProperties;
+
+import java.math.BigDecimal;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.BDDMockito.given;
 
 
 @ExtendWith(MockitoExtension.class)
 class TotalZusServiceTest {
 
+    public static final String TOTAL_ZUS_DESCRIPTION = "Total zus";
     @InjectMocks
     private  TotalZusService salaryCalculatorService;
 
@@ -24,7 +27,7 @@ class TotalZusServiceTest {
 
     @Test
     void getDescription() {
-        assertThat(salaryCalculatorService.getDescription()).isEqualTo("Total zus");
+        assertThat(salaryCalculatorService.getDescription()).isEqualTo(TOTAL_ZUS_DESCRIPTION);
     }
 
     @ParameterizedTest

@@ -1,13 +1,12 @@
 package com.acoustic.repository;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.acoustic.entity.TotalZus;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.acoustic.entity.TotalZus;
-
 @Repository
-public interface TotalZusRepository extends JpaRepository<TotalZus, Long> {
+public interface TotalZusRepository extends CrudRepository<TotalZus, Long> {
 
 
 
