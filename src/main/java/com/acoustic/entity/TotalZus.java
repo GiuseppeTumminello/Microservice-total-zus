@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 public class TotalZus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private BigDecimal totalZusAmount;
     private BigDecimal totalZusRate;
 
