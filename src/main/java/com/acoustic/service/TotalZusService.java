@@ -1,14 +1,13 @@
 package com.acoustic.service;
 
+import com.acoustic.rate.RatesConfigurationProperties;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.springframework.stereotype.Component;
-
-import com.acoustic.rate.RatesConfigurationProperties;
-import lombok.RequiredArgsConstructor;
-
-@Component
+@Service
 @RequiredArgsConstructor
 public class TotalZusService implements SalaryCalculatorService{
 
