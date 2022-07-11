@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("/totalZus")
+@RequestMapping("/total-zus")
 @RequiredArgsConstructor
 @Validated
 @CrossOrigin
@@ -27,7 +27,7 @@ public class TotalZusController {
     private final RatesConfigurationProperties ratesConfigurationProperties;
 
 
-    @PostMapping("/getTotalZus/{grossMonthlySalary}")
+    @PostMapping("/calculation/{grossMonthlySalary}")
     public Map<String, String> calculateTotalZus(@PathVariable @Min(2000)BigDecimal grossMonthlySalary){
         var totalZus = this.salaryCalculatorService.apply(grossMonthlySalary);
         this.totalZusRepository.save(TotalZus.builder().totalZusAmount(totalZus).totalZusRate(this.ratesConfigurationProperties.getTotalZusRate()).build());

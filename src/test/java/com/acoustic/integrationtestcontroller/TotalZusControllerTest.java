@@ -32,7 +32,7 @@ class TotalZusControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private final String TOTAL_ZUS_ENDPOINT = "/totalZus/getTotalZus/";
+    private final String TOTAL_ZUS_ENDPOINT = "/total-zus/calculation/";
 
 
     @ParameterizedTest
